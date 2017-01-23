@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>0a9f1dda-6d19-47ce-b8eb-597957a57292</ProjectGuid>
+    <ProjectGuid>{0A9F1DDA-6D19-47CE-B8EB-597957A57292}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ContinuousIntegration</RootNamespace>
@@ -30,24 +30,58 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Build\Build.app.targets" />
+    <None Include="Build\Build.cmd" />
+    <None Include="Build\Build.webapi.cmd" />
+    <None Include="Build\Build.webapp.cmd" />
+    <None Include="Build\Compile.app.targets" />
+    <None Include="Build\Deploy.app.targets" />
+    <None Include="Build\Deploy.webapp.targets" />
+    <None Include="Build\DeploymentImport.class.targets" />
+    <None Include="Build\FireDaemon.app.targets" />
+    <None Include="Build\SlowCheetah\SlowCheetah.NuGet.template.proj" />
+    <None Include="Build\SlowCheetah\SlowCheetah.Transforms.targets" />
+    <None Include="SqlDbContinuousIntegration\AutoDbBuild.cmd" />
+    <None Include="SqlDbContinuousIntegration\AutoDbDeploy.cmd" />
+    <None Include="SqlDbContinuousIntegration\AutoDbRestore.cmd" />
+    <None Include="SqlDbContinuousIntegration\AutoDbRoleUpdate.cmd" />
+    <None Include="SqlDbContinuousIntegration\cmd\ExportBacpac.cmd" />
+    <None Include="SqlDbContinuousIntegration\cmd\ImportBacpac.cmd" />
+    <None Include="SqlDbContinuousIntegration\DbDeploySignalCi.cmd" />
+    <None Include="SqlDbContinuousIntegration\ExportBacpac.cmd" />
+    <None Include="SqlDbContinuousIntegration\ImportBacpac.cmd" />
+    <None Include="SqlBuild\Build.cmd" />
+    <None Include="SqlBuild\Build.db.targets" />
+    <None Include="SqlBuild\Compile.db.targets" />
+    <None Include="SqlBuild\DbDeployment.class.targets" />
+    <None Include="SqlBuild\Deploy.db.targets" />
+    <None Include="SqlBuild\ExportBacpac.cmd" />
+    <None Include="SqlBuild\ImportBacpac.cmd" />
+    <None Include="SqlBuild\ImportDeploy.db.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Build\FireDaemon.xml" />
+    <Content Include="Build\SlowCheetah\Install-Manifest.xml" />
+    <Content Include="Build\SlowCheetah\Microsoft.Web.XmlTransform.dll" />
+    <Content Include="Build\SlowCheetah\SlowCheetah.Xdt.dll" />
+    <Content Include="SqlDbContinuousIntegration\sql\AutoDbRestore.sql" />
+    <Content Include="SqlDbContinuousIntegration\sql\AutoDbUpdateUserRole.sql" />
+    <Content Include="SqlDbContinuousIntegration\sql\RestoreProdDbFromBak.sql" />
+    <Content Include="SqlDbContinuousIntegration\sql\UpdateDevRolesOnMirror.sql" />
+    <Content Include="SqlBuild\AutoDbUpdateUserRole.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +91,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>
